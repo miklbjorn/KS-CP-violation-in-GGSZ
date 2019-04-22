@@ -13,7 +13,7 @@ class DtoKpipiAmplitude{
     public:
 
         DtoKpipiAmplitude(std::string kaon_type, int seed=0, double r_value=0.236*0.236);
-        ~DtoKpipiAmplitude(); // non-virtual: should not be a base class
+        virtual ~DtoKpipiAmplitude(); // virtual: abstract base class
 
         virtual dcomplex get_amplitude(double sKp, double sKm) const = 0;
 

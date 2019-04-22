@@ -1,12 +1,6 @@
 #include <iostream>
 #include "DtoKpipiAmplitude.h"
 #include "EvtGenAmplitude.h"
-#include "Cleo2002Amplitude.h"
-#include "BaBar2005Amplitude.h"
-#include "Belle2006Amplitude.h"
-#include "Belle2010Amplitude.h"
-#include "Belle2018AmplitudeWithAlternativePhaseConvention.h"
-#include "Belle2018Amplitude.h"
 #include "OutputMaker.h"
 #include "tclap/CmdLine.h"
 
@@ -100,18 +94,6 @@ int main(int argc , char* argv[] ){
     DtoKpipiAmplitude* amp;
     if (model=="EvtGen"){
         amp = new EvtGenAmplitude(kaon_type, seed, r_value);
-    } else if (model=="Belle2018"){
-        amp = new Belle2018Amplitude("./belle2018/belle2018_param.txt", kaon_type, seed, r_value);
-    } else if (model=="Belle2018AltPhase"){
-        amp = new Belle2018AmplitudeWithAlternativePhaseConvention("./belle2018/belle2018_param.txt", kaon_type, seed, r_value);
-    } else if (model=="Belle2010"){
-        amp = new Belle2010Amplitude(kaon_type, seed, r_value);
-    } else if (model=="Belle2006"){
-        amp = new Belle2006Amplitude(kaon_type, seed, r_value);
-    } else if (model=="BaBar2005"){
-        amp = new BaBar2005Amplitude(kaon_type, seed, r_value);
-    } else if (model=="Cleo2002"){
-        amp = new Cleo2002Amplitude(kaon_type, seed, r_value);
     } else {
         std::cout << "Unknown model: " << model << "! Exiting!\n";
         exit(-1);
