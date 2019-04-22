@@ -1,0 +1,5 @@
+build/*
+tclap/config
+tclap/tests
+tclap/msc
+tclap/examples
